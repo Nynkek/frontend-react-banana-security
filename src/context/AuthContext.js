@@ -6,21 +6,21 @@ export const AuthContext = createContext(null);
 
 function AuthContextProvider({children}) {
     const [isAuth, toggleIsAuth] = useState(false);
-    const history = useHistory();
+    let history = useHistory();
 
 
-    function login() {
+    function login(e) {
+        e.preventDefault();
+        history.push("/profile");
         console.log("Gebruiker is ingelogd");
         toggleIsAuth(!isAuth);
-        // history.push('/profile');
     }
 
-    function logout() {
+    function logout(e) {
+        e.preventDefault();
         console.log("de gebruiker is uitgelogd");
         toggleIsAuth(!isAuth);
-        // history.push('/');
-
-
+        history.push('/');
     }
 
     return (
