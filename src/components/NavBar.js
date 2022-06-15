@@ -28,7 +28,7 @@ function NavBar() {
                     <button type="button"
                         onClick={() => history.push('/signin')}
                     >
-                        Login
+                        Inloggen
                     </button> :
                     <button
                         type="button"
